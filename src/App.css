@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+/* --------------------------------------------------
+   Consolidated app CSS (use in a .jsx file if you prefer)
+   Paste this entire CSS into your file (e.g., src/styles/app.jsx)
+   -------------------------------------------------- */
+
+/* THEMES */
+:root{
+  --bg: #ffffff;
+  --surface: #f7f8fb;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #0ea5e9;
+  --card-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  --radius: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-theme='dark']{
+  --bg: #0b1220;
+  --surface: #071026;
+  --text: #e6eef8;
+  --muted: #9aa6b2;
+  --accent: #38bdf8;
+  --card-shadow: 0 8px 24px rgba(2,6,23,0.6);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* RESET & BASE */
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a{color:inherit}
+img{max-width:100%;display:block}
+
+/* LAYOUT HELPERS */
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+.section{padding:4.5rem 0}
+.row{display:flex;gap:2rem;align-items:center}
+.col{flex:1}
+.card{background:var(--surface);padding:1.25rem;border-radius:var(--radius);box-shadow:var(--card-shadow)}
+.h2{font-size:1.5rem;margin-bottom:1rem}
+.p-muted{color:var(--muted)}
+
+/* GENERAL UTILS */
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:600}
+.cta{background:var(--accent);color: #042028}
+
+/* NAVBAR */
+.nav{position:sticky;top:0;z-index:40;background:transparent;backdrop-filter: blur(6px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem}
+.brand{font-weight:700;font-size:1.05rem}
+.nav-links{display:flex;gap:1rem}
+.nav-links a{ text-decoration:none;color:var(--muted);padding:.45rem .6rem;border-radius:8px;transition:color .15s, background .15s }
+.nav-links a:hover{color:var(--text)}
+.theme-toggle{background:transparent;border:0;cursor:pointer;font-size:1.05rem;color:var(--muted)}
+
+/* MOBILE NAV (simple) */
+@media (max-width:700px){
+  .nav-links{display:none}
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* HOME / HERO */
+.home-section{padding-top:2rem}
+.hero{font-size:2.2rem;margin:0 0 .5rem}
+.accent{color:var(--accent)}
+.lead{font-size:1.05rem}
+.profile-img{width:160px;height:160px;object-fit:cover;border-radius:50%;border:4px solid rgba(255,255,255,0.06)}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* ABOUT */
+.about p{max-width:66ch}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.skill-card{ text-align:center;padding:1.5rem }
+.skill-card h4{margin:0 0 .4rem}
+@media (max-width:900px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.skills-grid{grid-template-columns:1fr}}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.project-card h3{margin-top:0}
+.project-link{text-decoration:none;color:var(--accent);font-weight:600}
+@media (max-width:900px){.projects-grid{grid-template-columns:1fr}}
+
+/* CONTACT */
+.contact-form{display:flex;flex-direction:column}
+.contact-form label{display:block;margin-top:.6rem;font-weight:600}
+.contact-form input,.contact-form textarea{width:100%;padding:.6rem;margin-top:.35rem;border-radius:8px;border:1px solid rgba(0,0,0,0.08);background:transparent;color:var(--text)}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(14,165,233,0.08)}
+.contact-form .cta{margin-top:.9rem}
+
+/* FOOTER */
+.footer{padding:2rem 0;text-align:center}
+
+/* SMALL SCREEN ADJUSTMENTS */
+@media (max-width:800px){.row{flex-direction:column}}
+
+/* TYPOS */
+.lead{color:var(--muted)}
+
+/* SMALL INTERACTIONS */
+.nav-links a:active,.nav-links a:focus{outline:none}
+.card{transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-4px)}
+
+/* accessibility focus visible */
+:focus{outline:2px dashed var(--accent);outline-offset:3px}
+
+/* hero CTA extra */
+.cta{border-radius:10px;padding:.6rem 1rem}
+
+/* end of consolidated CSS */

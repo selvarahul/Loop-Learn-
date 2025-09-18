@@ -1,0 +1,136 @@
+/* 🌊 Full-page animated gradient background */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 42, 108, 0.9),
+    rgba(79, 172, 254, 0.85),
+    rgba(0, 242, 254, 0.8),
+    rgba(26, 42, 108, 0.9)
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 18s ease infinite;
+
+  color: #000;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Title */
+.dashboard-container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+/* ✅ Back button */
+.back-btn {
+  display: block;
+  margin: 0 auto 40px;
+  background: linear-gradient(135deg, #1a2a6c, #4facfe, #00f2fe);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.back-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Category box */
+.dashboard-category {
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-category h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #1a2a6c;
+}
+
+/* Topics grid */
+.dashboard-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ Topic card with gradient background */
+.dashboard-topic-card {
+  background: linear-gradient(135deg, #1a2a6c, #4facfe, #00f2fe);
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  color: white; /* ✅ white text over gradient */
+  font-weight: 500;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-topic-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dashboard-topic-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+  color: #fff;
+}
+
+/* Progress bar */
+.dashboard-progress-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.dashboard-progress-fill {
+  height: 100%;
+  background: #ffd700; /* ✅ gold fill stands out on blue gradient */
+  border-radius: 8px;
+}
+
+.dashboard-progress-text {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px 10px;
+  }
+
+  .dashboard-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-category h2 {
+    font-size: 1.4rem;
+  }
+}

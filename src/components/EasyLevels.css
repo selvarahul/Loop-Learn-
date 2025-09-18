@@ -1,0 +1,146 @@
+/* Container */
+.levels-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* 🌊 Unified animated gradient background */
+  background: linear-gradient(
+    135deg,
+    rgba(26, 42, 108, 0.9),
+    rgba(79, 172, 254, 0.85),
+    rgba(0, 242, 254, 0.8),
+    rgba(26, 42, 108, 0.9)
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 18s ease infinite;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+.levels-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 15px 20px;
+
+  /* 🌊 Gradient header */
+  background: linear-gradient(135deg, #1a2a6c, #4facfe, #00f2fe);
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.levels-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.levels-header-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Buttons in header */
+.profile-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e3c72;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+.profile-btn:hover {
+  /* 🌊 Same gradient hover */
+  background: linear-gradient(135deg, #1a2a6c, #4facfe, #00f2fe);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Levels Grid */
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Level Buttons */
+.level-btn {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: #1e293b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+.level-btn:hover {
+  /* 🌊 Gradient hover */
+  background: linear-gradient(135deg, #1a2a6c, #4facfe, #00f2fe);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Locked Levels */
+.level-btn.locked {
+  background: rgba(228, 228, 228, 0.9);
+  color: #777;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.level-btn.locked:hover {
+  transform: none;
+  background: rgba(228, 228, 228, 0.9);
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .levels-header {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .levels-header-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .profile-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
