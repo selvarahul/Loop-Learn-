@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Loop-Learn-/static/css/main.ccf15d21.css",
+    "main.js": "/Loop-Learn-/static/js/main.4dc28e50.js",
+    "index.html": "/Loop-Learn-/index.html",
+    "main.ccf15d21.css.map": "/Loop-Learn-/static/css/main.ccf15d21.css.map",
+    "main.4dc28e50.js.map": "/Loop-Learn-/static/js/main.4dc28e50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ccf15d21.css",
+    "static/js/main.4dc28e50.js"
+  ]
+}
